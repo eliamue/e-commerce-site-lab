@@ -1,8 +1,11 @@
 // import functions and grab DOM elements
+import candles from './candles.js';
+import { renderCandles } from './render-candles.js';
 
-// initialize state
+const li = document.getElementById('candles');
 
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+for (let i = 0; i < candles.length; i++) {
+    const candle = candles[i];
+    const dom = renderCandles(candle);
+    li.appendChild(dom);
+}
