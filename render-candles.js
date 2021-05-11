@@ -9,7 +9,7 @@ export function renderCandles(candles) {
     h3.textContent = candles.name;
     li.appendChild(h3);
 
-    const scent = document.createElement('scent');
+    const scent = document.createElement('p');
     scent.textContent = candles.description;
     li.appendChild(scent);
 
@@ -25,9 +25,11 @@ export function renderCandles(candles) {
     const button = document.createElement('button');
     button.textContent = 'Add to cart';
     button.value = candles.id;
-    p.appendChild(button);
 
-    li.appendChild(p);
+    const cart = document.createElement('div');
+    cart.appendChild(p);
+    cart.appendChild(button);
+    li.appendChild(cart);
 
     return li;
 }
