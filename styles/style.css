@@ -3,9 +3,9 @@ body {
 
     --color1: hsla(6, 72%, 89%, 1);
     --color2: hsla(347, 45%, 84%, 1);
-    --color3: rgba(250, 189, 210, 0.447);
+    --color3: rgba(250, 189, 210, 0.297);
     --color4: rgb(194, 168, 189);
-    --color5: rgba(99, 81, 103, 0.721);
+    --color5: rgba(99, 81, 103, 0.776);
     
     --header-height: 80px;
     --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
@@ -27,6 +27,7 @@ header {
     width: 100%;
     align-items: flex-end;
     position: fixed;
+    margin-top: -50px;
 }
 
 main {
@@ -98,13 +99,15 @@ h3 {
 }
 
 p {
+    display: flex;
     margin: var(--gutter);
-    background-color: var(--color5);
-    width: fit-content;
+    width: 1fr;
     font-size: 1.5rem;
     border-radius: 20px;
     align-content: center;
     text-align: center;
+    flex-direction: column;
+    vertical-align: center;
 }
 
 footer {
@@ -171,4 +174,7 @@ button {
     font-size: 20px;
     font-weight: bold;
     box-shadow: var(--shadow);
+}
+div {
+    font-weight: bolder;
 }
