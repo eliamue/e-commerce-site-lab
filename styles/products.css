@@ -13,22 +13,21 @@ body {
     --gutter: 30px;
     --footer-height: 25px;
     
-    padding-top: 10px;
     font-family: 'Titillium Web', sans-serif;
     background-color: var(--color2);
     background-image: url(https://www.shutterpoint.com/wp-content/uploads/2020/05/pdflowerset15-por-04-1-1024x683.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
 header {
     display: flex;
     justify-content: flex-end;
-    background-color: rgba(255, 255, 240, 0);
+    background-color: var(--color3);
     border: none;
     width: 100%;
-    align-items: flex-end;
-    position: fixed;
-    margin-top: -50px;
+    margin: 0px;
+    padding: 0px;
 }
 
 main {
@@ -38,7 +37,6 @@ main {
     align-items: center;
     margin-bottom: calc(var(--footer-height));
     text-align: center;
-    padding: 5px;
     font-size: 20px;
 }
 
@@ -58,15 +56,6 @@ section {
     border-radius: 20px;
 }
 
-footer {
-    display: flex;
-    justify-content: center;
-    position: center;
-    background-color: var(--color2);
-    box-shadow: var(--shadow);
-    height: 200px;
-}
-
 h1 {
     font-size: 4rem;
     font-weight: bold;
@@ -76,6 +65,7 @@ h1 {
     margin: 10px;
     margin-bottom: 0px;
     border-radius: 10px;
+    color: darkolivegreen;
 }
 
 h2 {
@@ -111,6 +101,19 @@ p {
     text-align: center;
     flex-direction: column;
     vertical-align: center;
+}
+
+footer {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    width: 100%;
+    bottom: 0;
+    height: flex;
+    background-color: var(--color4);
+    box-shadow: var(--shadow);
+    padding-left: 20px;
+    padding-right: 20px;
 }
 img {
     max-width: 400px;
@@ -152,8 +155,8 @@ border:2px double black;
 
 #logo {
     display: flex;
+    justify-content: flex-start;
     border: none;
-    padding-right: 20px;
     background-color: rgba(255, 255, 240, 0);
 }
 
@@ -167,6 +170,13 @@ button {
     font-weight: bold;
     box-shadow: var(--shadow);
 }
+
 div {
     font-weight: bolder;
+}
+
+nav {
+    display: flex;
+    font-size: 20px;
+    justify-content: space-between;
 }

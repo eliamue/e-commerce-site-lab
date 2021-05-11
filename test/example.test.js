@@ -7,7 +7,7 @@ QUnit.module('Render Candles');
 test('renders a candle', assert => {
     // arrange
     const rose = {
-        id: 'rose', 
+        id: 1, 
         name: 'Rose Garden',
         image: 'rose.jpg',
         description: 'The intoxicating smell of a quaint garden at tea-time with a blooming garden of roses, honeysuckle, fresh-cut grass, and soil, and rain',
