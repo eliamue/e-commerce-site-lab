@@ -1,6 +1,6 @@
 // import functions and grab DOM elements
-import candles from './candles.js';
-import { renderCandles } from './render-candles.js';
+import candles from './products/candles.js';
+import { renderCandles } from './products/render-candles.js';
 
 const li = document.getElementById('candles');
 

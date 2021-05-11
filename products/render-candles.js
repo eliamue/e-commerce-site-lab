@@ -14,7 +14,7 @@ export function renderCandles(candles) {
     li.appendChild(scent);
 
     const img = document.createElement('img');
-    img.src = './assets/' + candles.image;
+    img.src = '../assets/' + candles.image;
     img.alt = candles.name + ' image';
     li.appendChild(img);
 
