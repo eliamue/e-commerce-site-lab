@@ -10,7 +10,7 @@ export function renderCartItem(cartItem) {
     const priceData = document.createElement('td');
     const totalData = document.createElement('td');
 
-    itemData.textContent = candle.category;
+    itemData.textContent = candle.name;
     quantityData.textContent = cartItem.quantity;
 
     priceData.textContent = candle.price.toLocaleString('en-US', { 

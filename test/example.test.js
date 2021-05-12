@@ -1,7 +1,7 @@
 import renderCandles from '../products/render-candles.js';
-// import { checkoutTotal } from '../cart/render-cart-items.js';
+import { renderCartItem } from '../cart/render-cart-items.js';
 import candles from '../candles.js';
-// import cart from '../cart.js';
+//import cart from '../cart.js';
 import findById from '../utils.js';
 import { setCart } from '../cart/local-storage-utils.js';
 
@@ -31,20 +31,20 @@ test('renders a candle', assert => {
     assert.equal(html, expected);
 });
 
-// test('renders item in cart', assert => {
+test('renders item in cart', assert => {
 
-//     const cartItem = {
-//         id: 'rose',
-//         quantity: 3
-//     };
+    const cartItem = {
+        id: 1,
+        quantity: 3
+    };
 
-//     const expected = '<tr><td>Floral Candle</td><td>3</td><td>$20.00</td><td>$60.00</td></tr>';
+    const expected = '<tr><td>Rose Garden</td><td>3</td><td>$20.00</td><td>$60.00</td></tr>';
 
-//     const dom = renderCartItem(cartItem);
-//     const html = dom.outerHTML;
+    const dom = renderCartItem(cartItem);
+    const html = dom.outerHTML;
 
-//     assert.equal(html, expected);
-// });
+    assert.equal(html, expected);
+});
 
 test('find product by id', assert => {
      // arrange
@@ -103,20 +103,22 @@ test('setCart takes an array, puts the stringified cersion in to locStor under t
     
 });
 
-// test('getCart gets a parsed version of cart in locStor', (expect) => {
+test('getCart gets a parsed version of cart in locStor', (expect) => {
 
-//     const candles = 
-//         {
-//             name: 'rose garden'
-//         },
-//         {
-//             name: 'forest pond'
-//         }
-//     
-//     setCart(candles);
+    const candles = [
+        {
+            id: 1,
+        },
+        {
+            id: 3
+        }];
     
-//     const stringyCandles = localStorage.getItem('CART');
-//     const parsedCandles = JSON.parse(stringyCandles);
+    const stringyCandles = JSON.stringify(candles);
+    localStorage.setItem('CART', stringyCandles);
+    setCart(candles);
 
-//     expect.deepEqual(candles, parsedCandles);
-// 
+    const stringierCandles = localStorage.getItem('CART');
+    const parsedCandles = JSON.parse(stringierCandles);
+
+    expect.deepEqual(candles, parsedCandles);
+});

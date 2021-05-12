@@ -25,7 +25,6 @@ export default function renderCandles(candles) {
     const button = document.createElement('button');
     button.textContent = 'Add to cart';
     button.value = candles.id;
-
     button.addEventListener('click', () => {
         addItemToCart(candles.id);
     });
