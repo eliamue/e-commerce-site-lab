@@ -3,6 +3,7 @@ import renderCandles from '../products/render-candles.js';
 import candles from '../candles.js';
 // import cart from '../cart.js';
 import findById from '../utils.js';
+import { setCart } from '../cart/local-storage-utils.js';
 
 const test = QUnit.test;
 
@@ -70,7 +71,7 @@ test('find product by id returns null if not found', assert => {
     assert.equal(foundCandles, expected);
 });
 
-// test('calculate order total', (assert) => {
+// test'calculate order total', (assert) => 
 //      // arrange
 //     const expected = 110.00;
 
@@ -79,4 +80,43 @@ test('find product by id returns null if not found', assert => {
 
 //      // assert
 //     assert.equal(orderTotal, expected);
-// });
+//
+
+test('setCart takes an array, puts the stringified cersion in to locStor under the key called CART', (expect) => {
+
+    const candles = [
+        {
+            name: 'rose garden'
+        },
+        {
+            name: 'forest pond'
+        }
+    ];
+
+    setCart(candles);
+    
+    const stringyCandles = localStorage.getItem('CART');
+    const parsedCandles = JSON.parse(stringyCandles);
+
+    expect.deepEqual(candles, parsedCandles);
+    
+    
+});
+
+// test('getCart gets a parsed version of cart in locStor', (expect) => {
+
+//     const candles = 
+//         {
+//             name: 'rose garden'
+//         },
+//         {
+//             name: 'forest pond'
+//         }
+//     
+//     setCart(candles);
+    
+//     const stringyCandles = localStorage.getItem('CART');
+//     const parsedCandles = JSON.parse(stringyCandles);
+
+//     expect.deepEqual(candles, parsedCandles);
+// 
