@@ -1,5 +1,5 @@
 import renderCandles from '../products/render-candles.js';
-// import { renderCartItem, checkoutTotal } from '../cart/render-cart-items.js';
+// import { checkoutTotal } from '../cart/render-cart-items.js';
 import candles from '../candles.js';
 // import cart from '../cart.js';
 import findById from '../utils.js';
@@ -70,14 +70,13 @@ test('find product by id returns null if not found', assert => {
     assert.equal(foundCandles, expected);
 });
 
-// // This one can be left to students to do...
 // test('calculate order total', (assert) => {
-//     // arrange
+//      // arrange
 //     const expected = 110.00;
 
-//     // act
+//      // act
 //     const orderTotal = checkoutTotal(cart, candles);
 
-//     // assert
+//      // assert
 //     assert.equal(orderTotal, expected);
 // });
