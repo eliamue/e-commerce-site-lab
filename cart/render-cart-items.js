@@ -1,6 +1,6 @@
-import { candles } from '../candles.js';
+import candles from '../candles.js';
 import { cartItems } from '../cart-items.js';
-import { findById } from '../utils.js';
+import findById from '../utils.js';
 
 export function renderCartItem(cartItem) {
     const candle = findById(candles, cartItem.id);

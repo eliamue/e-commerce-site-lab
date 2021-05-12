@@ -1,4 +1,4 @@
-export default { renderCandles };
+export default renderCandles;
 
 export function renderCandles(candles) {
     const li = document.createElement('li');
