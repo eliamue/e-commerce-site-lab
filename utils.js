@@ -1,7 +1,7 @@
-export default function findById(candles, id) {
+export default function findById(candles, idYo) {
     for (let candle of candles) {
     // check if the first thing in the array has an id that matches the id from the parameter
-        if (id === candle.id) {
+        if (idYo === candle.id) {
         // if the ids match, return that object
             return candle;
         }

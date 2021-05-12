@@ -1,5 +1,5 @@
 
-import { renderCartItem, checkoutTotal } from './render-cart-item.js';
+import { renderCartItem, checkoutTotal } from './render-cart-items.js';
 import { cartItems } from '../cart-items.js';
 
 const anchor = document.querySelector('tbody');
@@ -11,7 +11,7 @@ for (let item of cartItems) {
     anchor.append(tableRow);
 }
 
-const totalPrice = checkoutTotal();
+const totalPrice = checkoutTotal(cartItems);
 
 total.textContent = totalPrice.toLocaleString('en-US', {
     style: 'currency',

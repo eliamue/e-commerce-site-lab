@@ -1,6 +1,4 @@
-export default renderCandles;
-
-export function renderCandles(candles) {
+export default function renderCandles(candles) {
     const li = document.createElement('li');
     li.classList.add(candles.category);
     li.title = candles.name;

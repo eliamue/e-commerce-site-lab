@@ -1,5 +1,4 @@
 import candles from '../candles.js';
-import { cartItems } from '../cart-items.js';
 import findById from '../utils.js';
 
 export function renderCartItem(cartItem) {
@@ -30,10 +29,10 @@ export function renderCartItem(cartItem) {
     return tr;
 }
 
-export function checkoutTotal() {
+export function checkoutTotal(arr) {
     let accumulator = 0;
 
-    for (let item of cartItems) {
+    for (let item of arr) {
         const candle = findById(candles, item.id);
         const total = item.quantity * candle.price;
         accumulator = accumulator + total;

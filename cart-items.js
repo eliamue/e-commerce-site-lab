@@ -1,12 +1,14 @@
 export const cartItems = [
     // 3 rose candles
     {
-        id: 'rose',
+        id: 1,
         quantity: 3,
     },
     // 2 pirate candles
     {
-        id: 'pirate',
+        id: 2,
         quantity: 2,
     }
 ];
+
+export default { cartItems };
