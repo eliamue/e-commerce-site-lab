@@ -38,4 +38,6 @@ export function checkoutTotal(arr) {
         accumulator = accumulator + total;
     }
     return accumulator;
+    
 }
+

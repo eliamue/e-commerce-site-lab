@@ -19,3 +19,5 @@ total.textContent = totalPrice.toLocaleString('en-US', {
     style: 'currency',
     currency: 'USD'
 });
+
+checkoutButton
