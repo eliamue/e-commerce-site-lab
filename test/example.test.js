@@ -1,4 +1,5 @@
 import renderCandles from '../products/render-candles.js';
+import { renderCartItem } from '../cart/render-cart-items.js';
 
 const test = QUnit.test;
 
@@ -26,4 +27,27 @@ test('renders a candle', assert => {
     assert.equal(html, expected);
 });
 
-// test'takes an array and an id, and returns the first item found that has an id property that matches the passed in id', assert => 
+test('renders item in cart', assert => {
+
+    const cartItem = {
+        id: 'rose',
+        quantity: 3
+    };
+
+    const candle = {
+        id: 'rose', 
+        name: 'Rose Garden',
+        image: 'rose.jpg',
+        description: 'The intoxicating smell of a quaint garden at tea-time with a blooming garden of roses, honeysuckle, fresh-cut grass, and soil, and rain',
+        category: 'floral',
+        price: 20.00,
+        cost: 8.00
+    };
+
+    const expected = '<tr><td>Floral Candle</td><td>3</td><td>$20.00</td><td>$60.00</td></tr>';
+
+    const dom = renderCartItem(cartItem, candle);
+    const html = dom.outerHTML;
+
+    assert.equal(html, expected);
+});
