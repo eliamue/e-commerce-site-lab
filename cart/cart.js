@@ -18,6 +18,13 @@ const totalPrice = checkoutTotal(cartItems);
 total.textContent = totalPrice.toLocaleString('en-US', {
     style: 'currency',
     currency: 'USD'
+    
 });
 
-checkoutButton
+const checkoutButton = document.getElementById('checkout-button');
+checkoutButton.textContent = 'Checkout';
+checkoutButton.addEventListener('click', () => {
+    const stringyCart = JSON.stringify(cartItems, true, 2);
+    alert(stringyCart);
+    
+});

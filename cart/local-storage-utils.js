@@ -1,6 +1,6 @@
 import findById from '../utils.js';
 
-const CART = 'CART';
+export const CART = 'CART';
 
 export function getCart() {
     //get the stringified cart from local storage
@@ -53,4 +53,7 @@ export function addItemToCart(prodId) {
     
     // how do i put my cart in local storage?
     setCart(cart);
+    
 }
+
+export const stringyCart = localStorage.getItem(CART);

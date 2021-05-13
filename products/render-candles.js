@@ -27,7 +27,7 @@ export default function renderCandles(candles) {
     button.value = candles.id;
     button.addEventListener('click', () => {
         addItemToCart(candles.id);
-        alert(`'${candles.name}' has been added to your cart`)
+        alert(`'${candles.name}' has been added to your cart`);
     });
 
     const cart = document.createElement('div');

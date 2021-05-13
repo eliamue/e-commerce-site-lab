@@ -1,5 +1,6 @@
 import candles from '../candles.js';
 import findById from '../utils.js';
+//import { stringyCart } from './local-storage-utils.js';
 
 export function renderCartItem(cartItem) {
     const candle = findById(candles, cartItem.id);
@@ -24,12 +25,14 @@ export function renderCartItem(cartItem) {
         style: 'currency',
         currency: 'USD',
     });
-    
+
     tr.append(itemData, quantityData, priceData, totalData);
     return tr;
+
 }
 
 export function checkoutTotal(arr) {
+
     let accumulator = 0;
 
     for (let item of arr) {
@@ -40,4 +43,3 @@ export function checkoutTotal(arr) {
     return accumulator;
     
 }
-
