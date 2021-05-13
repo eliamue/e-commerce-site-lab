@@ -71,16 +71,22 @@ test('find product by id returns null if not found', assert => {
     assert.equal(foundCandles, expected);
 });
 
-// test'calculate order total', (assert) => 
-//      // arrange
-//     const expected = 110.00;
+// test('calculate order total', (expect) => {
 
-//      // act
-//     const orderTotal = checkoutTotal(cart, candles);
+//     const itemPrice = [{
+//         id: 1,
+//         price: 20
+//     }];
 
-//      // assert
-//     assert.equal(orderTotal, expected);
-//
+//     const itemQuantity = [{
+//         id: 1,
+//         quantity: 4
+//     }];
+
+//     const expected = 80;
+//     const result = checkoutTotal(itemPrice, itemQuantity);
+//     expect.deepEqual(result, expected);
+// });
 
 test('setCart takes an array, puts the stringified cersion in to locStor under the key called CART', (expect) => {
 

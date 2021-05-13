@@ -5,7 +5,6 @@ export default function findById(candles, idYo) {
         // if the ids match, return that object
             return candle;
         }
-    // otherwise, try it out with the next object in the array
     }
     // if you never find a match, return null;
     return null;
