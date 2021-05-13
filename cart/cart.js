@@ -22,10 +22,15 @@ total.textContent = totalPrice.toLocaleString('en-US', {
 });
 
 const checkoutButton = document.getElementById('checkout-button');
+
+if (cartItems.length === 0) {
+    checkoutButton.disabled = true;
+}
 checkoutButton.textContent = 'Checkout';
 checkoutButton.addEventListener('click', () => {
     const stringyCart = JSON.stringify(cartItems, true, 2);
-    alert(stringyCart);
+    alert('order placed ' + stringyCart);
     localStorage.clear(cartItems);
     document.location.href = '../';
+    
 });
