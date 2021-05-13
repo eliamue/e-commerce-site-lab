@@ -26,5 +26,5 @@ checkoutButton.textContent = 'Checkout';
 checkoutButton.addEventListener('click', () => {
     const stringyCart = JSON.stringify(cartItems, true, 2);
     alert(stringyCart);
-    
+    document.location.href = '../';
 });
