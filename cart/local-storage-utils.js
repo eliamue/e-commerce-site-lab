@@ -11,15 +11,11 @@ export function getCart() {
 // It's possible the user is new to the site or that they cleared their local storage, but either way, no cart!
 //So we have to check if the cart even exists. if it does, return it!
     if (parsedCart) {
-
 //here we want to return that real live human cart!
         return parsedCart;
-
     } else {
-
     //and when it doesn't exist, make an empty cart with an empty array
         return [];
-
     }
 }
 
