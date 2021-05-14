@@ -1,6 +1,5 @@
 import { addItemToCart, getCart } from '../cart/local-storage-utils.js';
 import findById from '../utils.js';
-import candles from '../candles.js';
 
 const goatCart = getCart();
 export default function renderCandles(niceCandles) {
@@ -27,8 +26,7 @@ export default function renderCandles(niceCandles) {
 
     const quant = document.createElement('p');
     quant.classList.add('quantity');
-    const canQuant = findById(goatCart, niceCandles.id);
-
+    const canQuant = findById(goatCart, niceCandles.id) || { quantity: 0 };
 
     const button = document.createElement('button');
     button.textContent = 'Add to cart';
@@ -36,8 +34,14 @@ export default function renderCandles(niceCandles) {
     button.addEventListener('click', () => {
         addItemToCart(niceCandles.id);
         alert(`'${niceCandles.name}' has been added to your cart`);
-        quant.textContent = `You have ${canQuant.quantity} items in your cart`;
+        location.reload();
     });
+
+    if (canQuant.quantity === 0) {
+        quant.textContent = 'You have 0 items in your cart';
+    } else {
+        quant.textContent = `You have ${canQuant.quantity} items in your cart`;
+    }
 
     const cart = document.createElement('div');
     cart.appendChild(p);
